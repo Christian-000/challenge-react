@@ -17,5 +17,5 @@ export async function checkBalanceContract(usr) {
     let quizContract = new ethers.Contract(QUIZ_ADDRESS, QUIZ_ABI, provider);
 
     let balance = await quizContract.balanceOf(usr);
-    console.log(balance.toString() / Math.pow(10,18))
+    return (balance.toString() / Math.pow(10,18))
 }

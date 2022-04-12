@@ -3,6 +3,8 @@ import { chainChanged } from '../controllers/chainChanged';
 import { checkBalance, checkBalanceContract } from '../controllers/checkBalance';
 import { getUser } from '../controllers/getUser'
 import { transaction } from '../controllers/transactions';
+import Balance from './Balance';
+import Survey from './Survey';
 
 export default function Dashboard() {
   
@@ -18,10 +20,7 @@ export default function Dashboard() {
         await checkBalance(user);
     }
 
-    const handleCheckBalanceContract = async (e) => {
-        e.preventDefault();
-        await checkBalanceContract(user);
-    }
+
 
     const handleTransaction = async (e) => {
         e.preventDefault();
@@ -31,9 +30,10 @@ export default function Dashboard() {
     <div>
         <h1>Dashboard</h1>
         <button onClick={(e) => handleChange(e)}>Change to roften</button>
+        <Balance user={user}/>
+        <Survey />
         <button onClick={(e) => handleBalance(e)}>Balance</button>
         <button onClick={(e) => handleTransaction(e)}>Transaction</button>
-        <button onClick={(e) => handleCheckBalanceContract(e)}>Call Contract</button>
     </div>
   )
 }
