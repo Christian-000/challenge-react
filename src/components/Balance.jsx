@@ -1,3 +1,4 @@
+import { Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { checkBalanceContract } from "../controllers/checkBalance";
 
@@ -15,7 +16,7 @@ export default function Balance({ user }) {
 
   return (
     <div>
-      <h1>Balance: {balance}</h1>
+      <Typography variant="h4" color="black" fontWeight={750} marginTop={5}>Balance: {balance}</Typography>
       <hr />
     </div>
   );

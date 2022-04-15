@@ -8,7 +8,7 @@ import Typography from "@mui/material/Typography";
 import { useNavigate } from "react-router-dom";
 
 export default function TriviaCard({ img, title }) {
-    let navigate = useNavigate();
+  let navigate = useNavigate();
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
@@ -27,7 +27,13 @@ export default function TriviaCard({ img, title }) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" onClick={()=>navigate("/trivia")}>Start Trivia</Button>
+        <Button
+          variant="outlined"
+          size="small"
+          onClick={() => navigate("/trivia")}
+        >
+          Start Trivia
+        </Button>
       </CardActions>
     </Card>
   );
